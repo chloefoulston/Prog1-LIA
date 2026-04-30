@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class GameLibrary here.
  *
@@ -7,27 +7,21 @@
  */
 public class GameLibrary
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class GameLibrary
-     */
-    public GameLibrary()
-    {
-        // initialise instance variables
-        x = 0;
+    private ArrayList<Game>games;
+    public GameLibrary(){
+        games= new ArrayList<>();
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public Game getGame(String name)
     {
-        // put your code here
-        return x + y;
+        for (Game g: games){
+            if(g.getName().equals(name)){
+                return g;
+            }
+        }
+        return null;
+    }
+    public void addGame(Game g)
+    {
+        games.add(g);
     }
 }
