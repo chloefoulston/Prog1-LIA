@@ -7,8 +7,4 @@
  */
 public class SinglePlayer extends Game
 {
-    public SinglePlayer(String gameName, String gameCreator, int rating)
-    {
-        super(gameName, gameCreator, rating);
-    }
 }

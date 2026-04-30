@@ -13,12 +13,10 @@ public class Game
     protected Genre genre;
     protected AgeRating ageRating;
     protected Platform platform;
-    protected GameType gameType;
-    public Game(String gameName, String gameCreator, int rating)
+    
+    public Game()
     {
-        this.gameName = gameName;
-        this.gameCreator = gameCreator;
-        this.rating = rating;
+        
                 
     }
     public String getName()

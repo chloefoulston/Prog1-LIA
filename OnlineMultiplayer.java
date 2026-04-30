@@ -7,11 +7,4 @@
  */
 public class OnlineMultiplayer extends Game
 {
-    public OnlineMultiplayer(String gameName, String gameCreator, int rating)
-    {
-        super(gameName, gameCreator, rating);
-        
-        
-        
-    }
 }

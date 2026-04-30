@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class GameLibrary
 {
     private ArrayList<Game>games;
+    private ArrayList<GameSession>session;
     public GameLibrary(){
         games= new ArrayList<>();
     }
