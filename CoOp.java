@@ -9,6 +9,6 @@ public class CoOp extends Game
 {
     public CoOp(String gameName, String gameCreator, int rating)
     {
-        super(gameName, gameCreator, rating)'
+        super(gameName, gameCreator, rating);
     }
 }
