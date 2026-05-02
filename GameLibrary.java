@@ -11,12 +11,14 @@ public class GameLibrary
     private ArrayList<GameSession>session;
     public GameLibrary(){
         games= new ArrayList<>();
+        
     }
     public Game getGame(String name)
     {
-        for (Game g: games){
-            if(g.getName().equals(name)){
+        for (Game g : games){
+            if (g.getGameName().equals(name)){
                 return g;
+                
             }
         }
         return null;
@@ -24,5 +26,32 @@ public class GameLibrary
     public void addGame(Game g)
     {
         games.add(g);
+    }
+    public void ListAllGames()
+    {
+        for (Game g: games){
+            System.out.println(g);
+        }
+        
+    }
+    
+    public void ListByGenre(String genre)
+    {
+        for (Game g: games){
+            if(g.getGenre().equals(genre.toUpperCase())){
+                System.out.println(g);
+                
+            }
+        }
+    }
+    
+    public void ListByAgeRating()
+    {
+        
+    }
+    
+    public void ListByPlatform()
+    {
+        
     }
 }

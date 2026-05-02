@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.target=OnlineMultiplayer
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ OnlineMultiplayer\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-numComments=1
+comment1.params=gameName\ gameDeveloper\ genre\ ageRating\ platform
+comment1.target=OnlineMultiplayer(java.lang.String,\ java.lang.String,\ Genre,\ AgeRating,\ Platform)
+numComments=2

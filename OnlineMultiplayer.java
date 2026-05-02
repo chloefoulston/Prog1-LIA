@@ -7,4 +7,9 @@
  */
 public class OnlineMultiplayer extends Game
 {
+    public OnlineMultiplayer(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform)
+    {
+        super(gameName, gameDeveloper, genre, ageRating, platform);
+        
+    }
 }
