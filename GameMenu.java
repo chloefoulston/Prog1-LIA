@@ -9,6 +9,24 @@ public class GameMenu
 {
     private GameLibrary library;
     private InputReader inputReader;
+    private GameSession session;
+    
+    public void start()
+    {
+        
+    }
+    
+    public void printMainMenu()
+    {
+        
+    }
+    
+    public void filterMenu()
+    {
+        
+    }
+    
+    
     
 
 }
