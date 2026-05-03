@@ -8,16 +8,18 @@ import java.util.ArrayList;
 public class GameLibrary
 {
     private ArrayList<Game>games;
+    private ArrayList<Integer> ratings;
     private ArrayList<GameSession>session;
     public GameLibrary(){
-        games= new ArrayList<>();
-        
+        games = new ArrayList<>();
+        ratings =new ArrayList<>();
+        session = new ArrayList<>();
     }
     public Game getGame(String name)
     {
         for (Game g : games){
             if (g.getGameName().equals(name)){
-                return g;
+                g.getGameInfo();
                 
             }
         }

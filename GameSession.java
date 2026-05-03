@@ -11,19 +11,25 @@ public class GameSession
     private long startTime;
     private long endTime;
     private long duration;
+    private boolean running = true;
     
     public GameSession()
     {
+        start();
         
     }
     
-    public void startGameSession(Game game)
+    public void start()
     {
-        this.startTime = System.currentTimeMillis();
-        
+        running = true;
+        while (running){
+            this.startTime = System.currentTimeMillis();
+            
+        }
     }
-    public void endGameSession(Game game)
+    public void endGameSession()
     {
+        running = false;
         this.endTime = (System.currentTimeMillis())/100/60;
         
     }

@@ -13,6 +13,17 @@ import org.junit.jupiter.api.Test;
  */
 public class GameTest
 {
+    private GameLibrary lib;
+    private Game g1;
+    private Game g2;
+    private Game g3;
+    private Game g4;
+
+    
+    
+
+    
+
     /**
      * Default constructor for test class GameTest
      */
@@ -29,6 +40,12 @@ public class GameTest
     @BeforeEach
     public void setUp()
     {
+        
+        lib = new GameLibrary();
+        g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM);
+        g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM);
+        g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC);
+        g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH);
     }
 
     /**
@@ -46,13 +63,6 @@ public class GameTest
     {
         System.out.println("TEST STARTED");
         
-        GameLibrary lib = new GameLibrary();
-        
-        Game g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM);
-        Game g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM);
-        Game g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC);
-        Game g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH);
-        
         lib.addGame(g1);
         lib.addGame(g2);
         lib.addGame(g3);
@@ -62,6 +72,13 @@ public class GameTest
         lib.listAllGames();
         
     
+    }
+    
+    @Test
+    public void startGame()
+    {
+        System.out.println("Launching " + g1.getGameName());
+        
     }
 }
 

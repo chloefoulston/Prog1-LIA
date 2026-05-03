@@ -13,16 +13,21 @@ import org.junit.jupiter.api.Test;
  */
 public class GameLibraryTest
 {
+    private GameLibrary lib;
+    private Game g1;
+    private Game g2;
+    private Game g3;
+    private Game g4;
+    
+
+    
+
     
     /**
      * Default constructor for test class GameLibraryTest
      */
     public GameLibraryTest()
     {
-        Game g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM);
-        Game g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM);
-        Game g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC);
-        Game g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH);
         
     }
 
@@ -34,9 +39,18 @@ public class GameLibraryTest
     @BeforeEach
     public void setUp()
     {
+        lib = new GameLibrary();
+        g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM);
+        g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM);
+        g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC);
+        g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH);
         
+        lib.addGame(g1);
+        lib.addGame(g2);
+        lib.addGame(g3);
+        lib.addGame(g4);
     }
-
+    
     /**
      * Tears down the test fixture.
      *
@@ -52,20 +66,18 @@ public class GameLibraryTest
     {
         System.out.println("TEST STARTED");
         
-        GameLibrary lib = new GameLibrary();
-        
-        Game g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM);
-        Game g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM);
-        Game g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC);
-        Game g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH);
-        
-        lib.addGame(g1);
-        lib.addGame(g2);
-        lib.addGame(g3);
-        lib.addGame(g4);
-        
-        System.out.println("ALL GAMES ADDED, Filtered LIST BELOW");
+        System.out.println("Filtered by Genre. List BELOW");
         lib.listByGenre("simulation");
+    }
+    
+    @Test
+    public void testGetGame()
+    {
+        System.out.println("TEST STARTED");
+        
+        lib.getGame("Minecraft");
+        
+        System.out.println("All Done!");
     }
 }
 
