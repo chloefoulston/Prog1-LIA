@@ -8,13 +8,14 @@ import java.util.ArrayList;
 public class GameLibrary
 {
     private ArrayList<Game>games;
-    private ArrayList<Integer> ratings;
     private ArrayList<GameSession>session;
-    public GameLibrary(){
+    
+    public GameLibrary()
+    {
         games = new ArrayList<>();
-        ratings =new ArrayList<>();
         session = new ArrayList<>();
     }
+    
     public Game getGame(String name)
     {
         for (Game g : games){
@@ -25,12 +26,12 @@ public class GameLibrary
         }
         return null;
     }
- 
-   
+    
     public void addGame(Game g)
     {
         games.add(g);
     }
+    
     public void listAllGames()
     {
         for (Game g: games){
@@ -38,6 +39,7 @@ public class GameLibrary
         }
         
     }
+
     
     public void listByGenre(String genre)
     {
@@ -48,14 +50,25 @@ public class GameLibrary
             }
         }
     }
-    
-    public void listByAgeRating()
+    public void listByAgeRating(String ageRating)
     {
+        for (Game g: games){
+            if(g.getAgeRating().equals(ageRating.toUpperCase())){
+                System.out.println(g);
+                
+            }
+        }
         
     }
-    
-    public void listByPlatform()
+    public void listByPlatform(String platform)
     {
-        
+        for (Game g: games){
+            if(g.getPlatform().equals(platform.toUpperCase())){
+                System.out.println(g);
+                
+            }
+        }
     }
+    
+    
 }

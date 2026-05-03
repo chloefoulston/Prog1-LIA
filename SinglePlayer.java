@@ -7,9 +7,17 @@
  */
 public class SinglePlayer extends Game
 {
+     private static final GameType gameType = GameType.SINGLEPLAYER;
+     
      private static final int maxPlayers = 1;
-     public SinglePlayer(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform)
+     public SinglePlayer(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform, GameType gameType)
      {
          super(gameName, gameDeveloper, genre, ageRating, platform);
+         
+     }
+     
+     public void startGame()
+     {
+         System.out.println("Launching " + getGameName());
      }
 }

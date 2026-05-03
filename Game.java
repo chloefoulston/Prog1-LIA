@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class Game here.
@@ -9,10 +10,10 @@ public class Game
 {
     protected String gameName;
     protected String gameDeveloper;
-    protected int rating;
     protected Genre genre;
     protected AgeRating ageRating;
     protected Platform platform;
+    private ArrayList<Integer> ratings;
     
     public Game(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform)
     {
@@ -21,12 +22,12 @@ public class Game
         this.genre = genre;
         this.ageRating = ageRating;
         this.platform = platform;
-                
+        ratings = new ArrayList<>();        
     }
       
     public String toString()
     {
-        return getGameName();
+        return getGameName() + ":"  + getGenre();
     }
     
     public void getGameInfo()
@@ -66,5 +67,20 @@ public class Game
     public void startGame()
     {
         System.out.println("Launching " + getGameName());
+    }
+    public void addRating(int rating)
+    {
+        Boolean validRating = (rating>=1 && rating<=5) ? true : false;
+        if (validRating){
+            ratings.add(rating);
+        }else{
+            System.out.println("INVALID RATING! ONLY ENTER VALUES BETWEEN 1-5");
+        }
+    }
+    public void listAllRatings()
+    {
+        for (Integer i : ratings){
+            System.out.println(i);
+        }
     }
     }
