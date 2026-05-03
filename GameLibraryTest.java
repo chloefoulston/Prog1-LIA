@@ -1,23 +1,28 @@
 
-
+import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class GameTest.
+ * The test class GameLibraryTest.
  *
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class GameTest
+public class GameLibraryTest
 {
+    
     /**
-     * Default constructor for test class GameTest
+     * Default constructor for test class GameLibraryTest
      */
-    public GameTest()
+    public GameLibraryTest()
     {
+        Game g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM);
+        Game g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM);
+        Game g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC);
+        Game g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH);
         
     }
 
@@ -29,6 +34,7 @@ public class GameTest
     @BeforeEach
     public void setUp()
     {
+        
     }
 
     /**
@@ -42,7 +48,7 @@ public class GameTest
     }
 
     @Test
-    public void testAddGames()
+    public void testingENUMFilterbyGenre()
     {
         System.out.println("TEST STARTED");
         
@@ -58,11 +64,14 @@ public class GameTest
         lib.addGame(g3);
         lib.addGame(g4);
         
-        System.out.println("ALL GAMES ADDED, LIST BELOW");
-        lib.listAllGames();
-        
-    
+        System.out.println("ALL GAMES ADDED, Filtered LIST BELOW");
+        lib.listByGenre("simulation");
     }
 }
+
+
+
+
+
 
 

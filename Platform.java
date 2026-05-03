@@ -7,5 +7,5 @@
  */
 public enum Platform
 {
-    CONSOLE, PC, MOBILE, SWITCH
+    CONSOLE, PC, MOBILE, SWITCH, CROSSPLATFORM
 }

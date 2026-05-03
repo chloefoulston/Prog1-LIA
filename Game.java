@@ -23,7 +23,20 @@ public class Game
         this.platform = platform;
                 
     }
+    public Game()
+    {
+        this.gameName = "Minecraft";
+        this.gameDeveloper = "MOJANG";
+        this.genre = Genre.SURVIVAL;
+        this.ageRating = AgeRating.E;
+        this.platform = Platform.CROSSPLATFORM;
+        
+    }
     
+    public String toString()
+    {
+        return getGameName();
+    }
     public void gameInfo()
     {
         System.out.println("Game Tittle : " + getGameName());
@@ -55,5 +68,10 @@ public class Game
     public String getPlatform()
     {
         return platform.toString();
+    }
+    
+    public void startGame()
+    {
+        System.out.println("Launching " + getGameName());
     }
     }

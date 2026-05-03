@@ -10,6 +10,7 @@ public class GameMenu
     private GameLibrary library;
     private InputReader inputReader;
     private GameSession session;
+    private Responder responder;
     
     public void start()
     {

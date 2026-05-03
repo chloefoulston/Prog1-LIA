@@ -23,11 +23,13 @@ public class GameLibrary
         }
         return null;
     }
+ 
+   
     public void addGame(Game g)
     {
         games.add(g);
     }
-    public void ListAllGames()
+    public void listAllGames()
     {
         for (Game g: games){
             System.out.println(g);
@@ -35,7 +37,7 @@ public class GameLibrary
         
     }
     
-    public void ListByGenre(String genre)
+    public void listByGenre(String genre)
     {
         for (Game g: games){
             if(g.getGenre().equals(genre.toUpperCase())){
@@ -45,12 +47,12 @@ public class GameLibrary
         }
     }
     
-    public void ListByAgeRating()
+    public void listByAgeRating()
     {
         
     }
     
-    public void ListByPlatform()
+    public void listByPlatform()
     {
         
     }
