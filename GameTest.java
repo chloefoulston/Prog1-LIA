@@ -86,6 +86,20 @@ public class GameTest
         g1.listAllRatings();
         
     }
+    @Test
+    public void testAvgRating()
+    {
+        g1.addRating(3);
+        g1.addRating(5);
+        g1.addRating(4);
+        g1.addRating(2);
+        g1.addRating(5);
+        g1.addRating(5);
+        
+        System.out.print(g1.getAverageRating());
+        
+        
+    }
 }
 
 

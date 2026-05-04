@@ -78,6 +78,13 @@ public class GameSessionTest
         gameSess1.endGameSession(g1);
         
     }
+
+    @Test
+    public void jh()
+    {
+        lib.addGame(g1);
+    }
 }
+
 
 

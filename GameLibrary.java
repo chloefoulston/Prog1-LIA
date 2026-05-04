@@ -15,18 +15,6 @@ public class GameLibrary
         games = new ArrayList<>();
         session = new ArrayList<>();
     }
-    // returns a game object by searching its name
-    public Game getGameObj(String name)
-    {
-        searchForGame(name);       
-        for (Game g : games){
-            if(foundGame = true){
-            searchForGame(name);
-            return g;
-            }
-        }
-        return null;
-    }
     
     public Game searchForGame(String name)
     {
@@ -41,6 +29,27 @@ public class GameLibrary
         return null;
         
     }
+    
+    // returns a game object by searching its name
+    public Game getGameObj(String name)
+    {
+        searchForGame(name);       
+        for (Game g : games){
+            if(foundGame = true){
+            searchForGame(name);
+            return g;
+            }
+        }
+        return null;
+    }
+    
+    
+    
+    public void listTopRatings(String name)
+    {
+        
+    }
+    
     // add game to collection
     public void addGame(Game g)
     {
@@ -75,6 +84,7 @@ public class GameLibrary
         }
         
     }
+    
     public void listByPlatform(String platform)
     {
         for (Game g: games){

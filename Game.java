@@ -82,4 +82,18 @@ public class Game
             System.out.println(i);
         }
     }
+    public double getAverageRating()
+    {
+        int ratingSum = 0;
+        int index = 1;
+        double average;
+        for (Integer i : ratings){
+            i += ratingSum;
+            
+        }
+        average = (double)ratingSum / ratings.size();
+        return average;
+        
     }
+    
+}
