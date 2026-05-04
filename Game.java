@@ -13,7 +13,9 @@ public class Game
     protected Genre genre;
     protected AgeRating ageRating;
     protected Platform platform;
+    protected GameSession session = new GameSession();
     private ArrayList<Integer> ratings;
+    private boolean gamePlaying = false;
     
     public Game(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform)
     {
@@ -67,6 +69,13 @@ public class Game
     public void startGame()
     {
         System.out.println("Launching " + getGameName());
+        session.startGameSession();
+        gamePlaying = true;
+    }
+    public void stopGame(){
+        System.out.println("Stopping " + getGameName() + "...");
+        session.endGameSession();
+        gamePlaying = false;
     }
     public void addRating(int rating)
     {

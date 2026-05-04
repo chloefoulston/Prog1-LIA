@@ -5,11 +5,11 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class COOP extends Game
+public class CoOp extends Game
 {
     private static final int maxPlayers = 4;
     private static final GameType gameType = GameType.COOP;
-    public COOP(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform)
+    public CoOp(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform)
     {
         super(gameName, gameDeveloper, genre, ageRating, platform);
     }
