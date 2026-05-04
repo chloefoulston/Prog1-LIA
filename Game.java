@@ -26,12 +26,12 @@ public class Game
         this.platform = platform;
         ratings = new ArrayList<>();        
     }
-      
+    // overides toString()  
     public String toString()
     {
         return getGameName() + ":"  + getGenre();
     }
-    
+    // prints all game info
     public void getGameInfo()
     {
         System.out.println("Game Tittle : " + getGameName());
@@ -65,7 +65,7 @@ public class Game
     {
         return platform.toString();
     }
-    
+    //add rating
     public void addRating(int rating)
     {
         Boolean validRating = (rating>=1 && rating<=5) ? true : false;
@@ -75,6 +75,7 @@ public class Game
             System.out.println("INVALID RATING! ONLY ENTER VALUES BETWEEN 1-5");
         }
     }
+    //list all ratings
     public void listAllRatings()
     {
         for (Integer i : ratings){

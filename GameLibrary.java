@@ -9,24 +9,39 @@ public class GameLibrary
 {
     private ArrayList<Game>games;
     private ArrayList<GameSession>session;
-    
+    private boolean foundGame;
     public GameLibrary()
     {
         games = new ArrayList<>();
         session = new ArrayList<>();
     }
-    
+    // returns a game object by searching its name
     public Game getGameObj(String name)
     {
+        searchForGame(name);       
         for (Game g : games){
-            if (g.getGameName().equals(name)){
-                return g;
-                
+            if(foundGame = true){
+            searchForGame(name);
+            return g;
             }
         }
         return null;
     }
     
+    public Game searchForGame(String name)
+    {
+        boolean foundGame = false;
+        for (Game g : games){
+            if (g.getGameName().equals(name)){
+               foundGame= true;
+            }else{
+                foundGame=false;
+            }
+        }
+        return null;
+        
+    }
+    // add game to collection
     public void addGame(Game g)
     {
         games.add(g);

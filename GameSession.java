@@ -13,12 +13,13 @@ public class GameSession
     private long duration;
     private boolean running = false;
 
+    //takes game object and starts game session
     public void startGameSession(Game game){
         System.out.println("launching "+ game);
         startTime = System.currentTimeMillis();
         running = true;
     }
-
+    // takes game object and ends session
     public void endGameSession(Game game){
         endTime = System.currentTimeMillis();
         System.out.println("exiting "+ game);

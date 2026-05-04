@@ -1,5 +1,5 @@
 
-import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,6 +45,8 @@ public class GameLibraryTest
         lib.addGame(g2);
         lib.addGame(g3);
         lib.addGame(g4);
+        
+        System.out.println("TEST STARTED");
     }
     
     /**
@@ -55,6 +57,7 @@ public class GameLibraryTest
     @AfterEach
     public void tearDown()
     {
+        System.out.println("All Done!");
     }
 
     @Test
@@ -66,20 +69,23 @@ public class GameLibraryTest
         lib.listByGenre("simulation");
     }
     
+    
+
     @Test
-    public void testGetGame()
+    public void testSearchGame()
     {
-        System.out.println("TEST STARTED");
-        
-        lib.getGame("Minecraft");
-        
-        System.out.println("All Done!");
+        System.out.println("----valid value");
+        lib.searchForGame("Minecraft");
+        System.out.println("----invalid value");
+        lib.searchForGame("Once Human");
+    }
+
+    @Test
+    public void getGameObj()
+    {
+        lib.listAllGames();
+        Game game1 = lib.getGameObj("Minecraft");
+        assertEquals(g1, game1);
     }
 }
-
-
-
-
-
-
 
