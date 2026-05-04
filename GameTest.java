@@ -89,7 +89,7 @@ public class GameTest
     @Test
     public void testAvgRating()
     {
-        g1.addRating(3);
+        g1.addRating(5);
         g1.addRating(5);
         g1.addRating(4);
         g1.addRating(2);

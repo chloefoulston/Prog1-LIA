@@ -40,8 +40,37 @@ public class Game
         System.out.println("Platform : " + getPlatform());
         System.out.println("Age Rating : " + getAgeRating());
     }
+    //add rating
+    public void addRating(int rating)
+    {
+        Boolean validRating = (rating>=1 && rating<=5) ? true : false;
+        if (validRating){
+            ratings.add(rating);
+        }else{
+            System.out.println("INVALID RATING! ONLY ENTER VALUES BETWEEN 1-5");
+        }
+    }
+    //list all ratings
+    public void listAllRatings()
+    {
+        for (Integer i : ratings){
+            System.out.println(i);
+        }
+    }
     
-    public String getGameName()
+    public double getAverageRating()
+    {
+        int ratingSum=0;
+        double average;
+        for (Integer i : ratings){
+            ratingSum = i + ratingSum;
+            
+        }
+        average = ratingSum / ratings.size();
+        return average;
+        
+    }
+        public String getGameName()
     {
         return gameName;
     }
@@ -64,36 +93,6 @@ public class Game
     public String getPlatform()
     {
         return platform.toString();
-    }
-    //add rating
-    public void addRating(int rating)
-    {
-        Boolean validRating = (rating>=1 && rating<=5) ? true : false;
-        if (validRating){
-            ratings.add(rating);
-        }else{
-            System.out.println("INVALID RATING! ONLY ENTER VALUES BETWEEN 1-5");
-        }
-    }
-    //list all ratings
-    public void listAllRatings()
-    {
-        for (Integer i : ratings){
-            System.out.println(i);
-        }
-    }
-    public double getAverageRating()
-    {
-        int ratingSum = 0;
-        int index = 1;
-        double average;
-        for (Integer i : ratings){
-            i += ratingSum;
-            
-        }
-        average = (double)ratingSum / ratings.size();
-        return average;
-        
     }
     
 }

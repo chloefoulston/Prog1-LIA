@@ -43,11 +43,13 @@ public class GameLibrary
         return null;
     }
     
-    
-    
     public void listTopRatings(String name)
     {
-        
+        for (Game g:games){
+            if(g.getAverageRating() >=4){
+                System.out.println(g.getGameName()+" : has a rating of" + g.getAverageRating() + " stars");
+            }
+        }
     }
     
     // add game to collection
