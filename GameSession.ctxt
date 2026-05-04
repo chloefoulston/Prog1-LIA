@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=GameSession
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameSession\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ startGameSession()
-comment2.params=
-comment2.target=void\ endGameSession()
+comment1.params=game
+comment1.target=void\ startGameSession(Game)
+comment2.params=game
+comment2.target=void\ endGameSession(Game)
 comment3.params=
 comment3.target=boolean\ isRunning()
 comment4.params=

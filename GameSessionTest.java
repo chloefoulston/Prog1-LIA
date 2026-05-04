@@ -13,6 +13,13 @@ import org.junit.jupiter.api.Test;
  */
 public class GameSessionTest
 {
+    private GameLibrary lib;
+    private Game g1;
+    private Game g2;
+    private Game g3;
+    private Game g4;
+    private GameSession gameSess1;
+
     /**
      * Default constructor for test class GameSessionTest
      */
@@ -28,6 +35,19 @@ public class GameSessionTest
     @BeforeEach
     public void setUp()
     {
+        lib = new GameLibrary();
+        g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM);
+        g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM);
+        g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC);
+        g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH);
+        
+        lib.addGame(g1);
+        lib.addGame(g2);
+        lib.addGame(g3);
+        lib.addGame(g4);
+        gameSess1 = new GameSession();
+        lib.listAllGames();
+        System.out.println("TEST STARTED");
     }
 
     /**
@@ -38,5 +58,26 @@ public class GameSessionTest
     @AfterEach
     public void tearDown()
     {
+        System.out.println("TEST DONE");
+    }
+
+    @Test
+    public void dsfdf()
+    {
+        
+    }
+
+    @Test
+    public void testStartGameSession()
+    {
+        gameSess1.startGameSession(g1);
+        
+    }
+    public void testEndGameSession()
+    {
+        gameSess1.endGameSession(g1);
+        
     }
 }
+
+

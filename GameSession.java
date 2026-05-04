@@ -13,13 +13,15 @@ public class GameSession
     private long duration;
     private boolean running = false;
 
-    public void startGameSession(){
+    public void startGameSession(Game game){
+        System.out.println("launching "+ game);
         startTime = System.currentTimeMillis();
         running = true;
     }
 
-    public void endGameSession(){
+    public void endGameSession(Game game){
         endTime = System.currentTimeMillis();
+        System.out.println("exiting "+ game);
         running = false;
     }
 

@@ -16,11 +16,11 @@ public class GameLibrary
         session = new ArrayList<>();
     }
     
-    public Game getGame(String name)
+    public Game getGameObj(String name)
     {
         for (Game g : games){
             if (g.getGameName().equals(name)){
-                g.getGameInfo();
+                return g;
                 
             }
         }

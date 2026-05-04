@@ -18,11 +18,7 @@ public class GameLibraryTest
     private Game g2;
     private Game g3;
     private Game g4;
-    
-
-    
-
-    
+          
     /**
      * Default constructor for test class GameLibraryTest
      */

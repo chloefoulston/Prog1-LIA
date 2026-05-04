@@ -65,13 +65,6 @@ public class GameTest
         System.out.println("ALL GAMES ADDED, LIST BELOW");
         lib.listAllGames();
     }
-    
-    @Test
-    public void startGame()
-    {
-        System.out.println("Launching " + g1.getGameName());
-        
-    }
 
     @Test
     public void testAddRatingANDlistRatings()
