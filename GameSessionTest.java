@@ -36,10 +36,10 @@ public class GameSessionTest
     public void setUp()
     {
         lib = new GameLibrary();
-        g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM);
-        g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM);
-        g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC);
-        g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH);
+        g1 = new Game("Minecraft","MOJANG", Genre.SURVIVAL, AgeRating.E, Platform.CROSSPLATFORM,GameType.SINGLEPLAYER);
+        g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM, GameType.ONLINEMULTIPLAYER);
+        g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC, GameType.COOP);
+        g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH,GameType.SINGLEPLAYER);
         
         lib.addGame(g1);
         lib.addGame(g2);
@@ -70,12 +70,12 @@ public class GameSessionTest
     @Test
     public void testStartGameSession()
     {
-        gameSess1.startGameSession(g1);
+        gameSess1.startGame(g1);
         
     }
     public void testEndGameSession()
     {
-        gameSess1.endGameSession(g1);
+        gameSess1.endGame(g1);
         
     }
 

@@ -8,22 +8,23 @@ import java.util.ArrayList;
  */
 public class Game
 {
-    protected String gameName;
-    protected String gameDeveloper;
-    protected Genre genre;
-    protected AgeRating ageRating;
-    protected Platform platform;
-    protected GameSession session = new GameSession();
+    private String gameName;
+    private String gameDeveloper;
+    private Genre genre;
+    private AgeRating ageRating;
+    private Platform platform;
+    private GameType gameType;
     private ArrayList<Integer> ratings;
     
     
-    public Game(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform)
+    public Game(String gameName, String gameDeveloper, Genre genre, AgeRating ageRating, Platform platform,GameType gameType)
     {
         this.gameName = gameName;
         this.gameDeveloper = gameDeveloper;
         this.genre = genre;
         this.ageRating = ageRating;
         this.platform = platform;
+        this.gameType = gameType;
         ratings = new ArrayList<>();        
     }
     // overides toString()  
@@ -94,5 +95,10 @@ public class Game
     {
         return platform.toString();
     }
+    public String getGameType()
+    {
+        return gameType.toString();
+    }
+    
     
 }

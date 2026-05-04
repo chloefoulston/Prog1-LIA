@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class GameLibrary
 {
     private ArrayList<Game>games;
+    
     private ArrayList<GameSession>session;
     private boolean foundGame;
     public GameLibrary()
@@ -42,6 +43,12 @@ public class GameLibrary
         }
         return null;
     }
+    public void startGame(String gameName){
+        
+        
+            
+    }
+        
     
     public void listTopRatings(String name)
     {
@@ -76,6 +83,15 @@ public class GameLibrary
             }
         }
     }
+    public void listByGameType(String gameType)
+    {
+        for (Game g: games){
+            if(g.getGameType().equals(gameType.toUpperCase())){
+                System.out.println(g);
+                
+            }
+        }
+    }
     public void listByAgeRating(String ageRating)
     {
         for (Game g: games){
@@ -96,6 +112,8 @@ public class GameLibrary
             }
         }
     }
+    
+    
     
     
 }

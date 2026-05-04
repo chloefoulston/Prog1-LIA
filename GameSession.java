@@ -5,22 +5,26 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class GameSession
+public abstract class GameSession
 {
-    private Game game;
-    private long startTime;
-    private long endTime;
-    private long duration;
-    private boolean running = false;
-
+    protected GameLibrary lib;
+    protected long startTime;
+    protected long endTime;
+    protected long duration;
+    protected boolean running = false;
+    public GameSession()
+    {
+        
+    }
+   
     //takes game object and starts game session
-    public void startGameSession(Game game){
+    public void startGame(Game game){
         System.out.println("launching "+ game);
         startTime = System.currentTimeMillis();
         running = true;
     }
     // takes game object and ends session
-    public void endGameSession(Game game){
+    public void endGame(Game game){
         endTime = System.currentTimeMillis();
         System.out.println("exiting "+ game);
         running = false;
