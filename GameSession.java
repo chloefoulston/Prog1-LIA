@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class GameSession here.
+ * Write a description of class CopyOfGameSession here.
  *
  * @author (your name)
  * @version (a version number or a date)
@@ -14,9 +14,11 @@ public abstract class GameSession
     protected boolean running = false;
     public GameSession()
     {
-        
     }
-   
+
+    public String toString() {
+        return "GameSession: running = " + running + ", duration = " + duration + "s";
+    }
     //takes game object and starts game session
     public void startGame(Game game){
         System.out.println("launching "+ game);

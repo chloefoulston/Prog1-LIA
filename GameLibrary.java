@@ -17,6 +17,10 @@ public class GameLibrary
         session = new ArrayList<>();
     }
     
+    public String toString(){
+        return "GameLibrary has " + games.size() + " games: " + games.toString();
+    }
+    
     public Game searchForGame(String name)
     {
         boolean foundGame = false;

@@ -1,5 +1,4 @@
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,13 +17,13 @@ public class GameLibraryTest
     private Game g2;
     private Game g3;
     private Game g4;
-          
+
     /**
      * Default constructor for test class GameLibraryTest
      */
     public GameLibraryTest()
     {
-        
+
     }
 
     /**
@@ -40,15 +39,15 @@ public class GameLibraryTest
         g2 = new Game("Forza","Playground Games", Genre.RACING, AgeRating.E, Platform.CROSSPLATFORM, GameType.ONLINEMULTIPLAYER);
         g3 = new Game("Stardew Valley","dsfadsa", Genre.SIMULATION, AgeRating.E, Platform.PC, GameType.COOP);
         g4 = new Game("Animal Crossing","Nintendo", Genre.SIMULATION, AgeRating.E, Platform.SWITCH,GameType.SINGLEPLAYER);
-        
+
         lib.addGame(g1);
         lib.addGame(g2);
         lib.addGame(g3);
         lib.addGame(g4);
-        
+
         System.out.println("TEST STARTED");
     }
-    
+
     /**
      * Tears down the test fixture.
      *
@@ -64,12 +63,11 @@ public class GameLibraryTest
     public void testingENUMFilterbyGenre()
     {
         System.out.println("TEST STARTED");
-        
+
         System.out.println("Filtered by Genre. List BELOW");
         lib.listByGenre("simulation");
     }
-    
-    
+
 
     @Test
     public void testSearchGame()
@@ -86,6 +84,11 @@ public class GameLibraryTest
         lib.listAllGames();
         Game game1 = lib.getGameObj("Minecraft");
         assertEquals(g1, game1);
+    }
+
+    @Test
+    public void testToString() {
+        System.out.println(lib);
     }
 }
 
