@@ -1,14 +1,16 @@
 #BlueJ class context
 comment0.target=GameSession
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameSession\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ CopyOfGameSession\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=GameSession()
-comment2.params=game
-comment2.target=void\ startGame(Game)
+comment2.params=
+comment2.target=java.lang.String\ toString()
 comment3.params=game
-comment3.target=void\ endGame(Game)
-comment4.params=
-comment4.target=boolean\ isRunning()
+comment3.target=void\ startGame(Game)
+comment4.params=game
+comment4.target=void\ endGame(Game)
 comment5.params=
-comment5.target=long\ getGameDuration()
-numComments=6
+comment5.target=boolean\ isRunning()
+comment6.params=
+comment6.target=long\ getGameDuration()
+numComments=7
