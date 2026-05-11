@@ -7,4 +7,7 @@ import java.util.Scanner;
  */
 public class InputReader
 {
+    public InputReader(){
+        
+    }
 }

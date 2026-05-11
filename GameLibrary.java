@@ -16,10 +16,7 @@ public class GameLibrary
         games = new ArrayList<>();
         session = new ArrayList<>();
     }
-    public void printLibraryDetails()
-    {
-        System.out.println("Your Game Library has " + games.size() + " games");
-    }
+    
     public String toString(){
         return "GameLibrary has " + games.size() + " games: " + games.toString();
     }
@@ -50,9 +47,14 @@ public class GameLibrary
         }
         return null;
     }
+    public void startGame(String gameName){
+        
+        
+            
+    }
         
     
-    public void listTopRatings()
+    public void listTopRatings(String name)
     {
         for (Game g:games){
             if(g.getAverageRating() >=4){
