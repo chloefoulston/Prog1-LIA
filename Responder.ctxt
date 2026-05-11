@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.target=Responder
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Responder\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Responder()
-numComments=2
+comment1.params=lib\ input
+comment1.target=Responder(GameLibrary,\ InputReader)
+comment2.params=choice
+comment2.target=void\ responses(java.lang.String)
+numComments=3

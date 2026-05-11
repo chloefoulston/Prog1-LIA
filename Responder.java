@@ -9,10 +9,16 @@ public class Responder
 {
     
     private GameLibrary lib;
-    public void responses(String input)
+    private GameMenu menu;
+    private InputReader input;
+    public Responder(GameLibrary lib,InputReader input) 
     {
-        
-        switch (input){
+        this.lib=lib;
+        this.input = input;
+    }
+    public void responses(String choice)
+    {
+        switch (choice){
             case "1":
                 lib.printLibraryDetails();
                 break;
@@ -20,19 +26,28 @@ public class Responder
                 lib.listAllGames();
                 break;
             case "3":
-                
-            case "4": 
-                
-            case "5": 
+                menu.filterMenu();
+                break;
+            case "4":
+                lib.listTopRatings();
+                break;
+            case "5":
+                System.out.println("enter game name");
+                String gameNameInfo = input.getString();
+                lib.getGameObj(gameNameInfo).getGameInfo();
                 
             case "6":
-                lib.listTopRatings();
+                System.out.println("enter game name");
+                String gameNameRate = input.getString();
+                int gameRating = input.getInt();
+                lib.getGameObj(gameNameRate).addRating(gameRating);
+                
             case "7":
+                System.out.println("enter game name");
+                
             case "8":
             case "9":
-            case "10":
-            case "11":
-            case "12":
+            case "0":
             
         }
     }

@@ -14,6 +14,7 @@ public abstract class GameSession
     protected boolean running = false;
     public GameSession()
     {
+        
     }
 
     public String toString() {
