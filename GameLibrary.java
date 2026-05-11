@@ -20,7 +20,10 @@ public class GameLibrary
     public String toString(){
         return "GameLibrary has " + games.size() + " games: " + games.toString();
     }
-    
+    public void printLibraryDetails()
+    {
+        System.out.println("Your Game Library has " + games.size() + " games");
+    }
     public Game searchForGame(String name)
     {
         boolean foundGame = false;
@@ -54,7 +57,7 @@ public class GameLibrary
     }
         
     
-    public void listTopRatings(String name)
+    public void listTopRatings()
     {
         for (Game g:games){
             if(g.getAverageRating() >=4){
