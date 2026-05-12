@@ -9,6 +9,10 @@ public class COOPSession extends GameSession
 {
     private static final int maxPlayers = 4;
     private boolean validSession;
+    public COOPSession(Game game)
+    {
+         
+    }
     public void validSession(String name)
     {
         if (lib.getGameObj(name).getGameType().equals("COOP")){
@@ -16,5 +20,9 @@ public class COOPSession extends GameSession
         }else{
             validSession = false;
         }
+    }
+    public void startSession()
+    {
+        
     }
     }

@@ -7,12 +7,8 @@
  */
 public class SingleplayerSession extends GameSession
 {   
-     private static final int maxPlayers = 1;
-     
-     public SingleplayerSession(Game game)
-     {
-         
-     }
+    private static final int maxPlayers = 1;
+    
     private boolean validSession;
     public void validSession(String name)
     {
@@ -22,9 +18,13 @@ public class SingleplayerSession extends GameSession
             validSession = false;
         }
     }
-     public void startGame(String gameName)
-     {
+    public void startGame(String gameName)
+    {
                   
          
-     }
+    }
+    public void startSession()
+    {
+        
+    }
 }

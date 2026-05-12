@@ -12,27 +12,20 @@ public abstract class GameSession
     protected long endTime;
     protected long duration;
     protected boolean running = false;
-    public GameSession()
-    {
-        
-    }
+    
 
     public String toString() {
         return "GameSession: running = " + running + ", duration = " + duration + "s";
     }
     //takes game object and starts game session
-    public void startGame(Game game){
-        System.out.println("launching "+ game);
-        startTime = System.currentTimeMillis();
-        running = true;
-    }
+    
     // takes game object and ends session
     public void endGame(Game game){
         endTime = System.currentTimeMillis();
         System.out.println("exiting "+ game);
         running = false;
     }
-
+    public abstract void startSession();
     public boolean isRunning(){
         return running;
     }

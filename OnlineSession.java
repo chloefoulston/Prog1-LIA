@@ -7,6 +7,10 @@
  */
 public class OnlineSession extends GameSession
 {
+    public OnlineSession(Game game)
+    {
+         
+    }
     private boolean validSession;
     public void validSession(String name)
     {
@@ -15,6 +19,10 @@ public class OnlineSession extends GameSession
         }else{
             validSession = false;
         }
+    }
+    public void startSession()
+    {
+        
     }
 }
 

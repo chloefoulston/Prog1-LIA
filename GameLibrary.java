@@ -50,10 +50,19 @@ public class GameLibrary
         }
         return null;
     }
-    public void startGame(String gameName){
-        
-        
-            
+    public GameSession startSession(Game game)
+    {
+        switch(game.getGameType()) 
+        {
+            case "SINGLEPLAYER":
+            return new SingleplayerSession();
+            case "COOP":
+            return new COOPSession(game);
+            case "ONLINE":
+            return new OnlineSession(game);
+            default:
+                return null;
+        }
     }
         
     
