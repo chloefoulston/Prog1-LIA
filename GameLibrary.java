@@ -9,12 +9,12 @@ public class GameLibrary
 {
     private ArrayList<Game>games;
     
-    private ArrayList<GameSession>session;
+    private ArrayList<GameSession>sessions;
     private boolean foundGame;
     public GameLibrary()
     {
         games = new ArrayList<>();
-        session = new ArrayList<>();
+        sessions = new ArrayList<>();
     }
     
     public String toString(){
@@ -63,7 +63,7 @@ public class GameLibrary
         switch(game.getGameType()) 
         {
             case "SINGLEPLAYER":
-            return new SingleplayerSession();
+            return new SingleplayerSession(game);
             case "COOP":
             return new COOPSession(game);
             case "ONLINE":
@@ -78,7 +78,7 @@ public class GameLibrary
     {
         for (Game g:games){
             if(g.getAverageRating() >=4){
-                System.out.println(g.getGameName()+" : has a rating of" + g.getAverageRating() + " stars");
+                System.out.println(g.getGameName()+" : " + g.getAverageRating() + " stars");
             }
         }
     }
@@ -96,7 +96,7 @@ public class GameLibrary
         }
         
     }
-
+    
     
     public void listByGenre(String genre)
     {
@@ -137,7 +137,10 @@ public class GameLibrary
         }
     }
     
-    
+    public void addSession(GameSession session)
+    {
+        sessions.add(session);
+    }
     
     
 }

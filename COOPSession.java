@@ -21,7 +21,7 @@ public class COOPSession extends GameSession
             validSession = false;
         }
     }
-    public void startSession()
+    public void startSession(Game game)
     {
         
     }

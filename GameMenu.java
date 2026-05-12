@@ -12,19 +12,19 @@ public class GameMenu
     private Responder responder;
     private boolean finished;
     
-    public GameMenu(GameLibrary lib)
+    public GameMenu(Responder responder)
     {
         input = new InputReader();
-        responder = new Responder(input,lib);
+        this.responder = responder;
         finished = false;        
         
     }
     public void start() {
+        responder.printMainMenu();
         while (!finished) {
-            printMainMenu();
             String choice = input.getChoice();
 
-            if (choice.equals("quit")) {
+            if (choice.equals("0")) {
                 finished = true;
                 System.out.println("Goodbye.");
             } else {

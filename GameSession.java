@@ -18,14 +18,16 @@ public abstract class GameSession
         return "GameSession: running = " + running + ", duration = " + duration + "s";
     }
     //takes game object and starts game session
-    
+    public void CreateSession(){
+        
+    }
     // takes game object and ends session
     public void endGame(Game game){
         endTime = System.currentTimeMillis();
         System.out.println("exiting "+ game);
         running = false;
     }
-    public abstract void startSession();
+    public abstract void startSession(Game game);
     public boolean isRunning(){
         return running;
     }

@@ -10,6 +10,12 @@ public class SingleplayerSession extends GameSession
     private static final int maxPlayers = 1;
     
     private boolean validSession;
+    public SingleplayerSession(Game game)
+    {
+        System.out.println(game.getGameName() + " has started");
+        boolean running = true;
+        
+    }
     public void validSession(String name)
     {
         if (lib.getGameObj(name).getGameType().equals("SINGLEPLAYER")){
@@ -18,13 +24,9 @@ public class SingleplayerSession extends GameSession
             validSession = false;
         }
     }
-    public void startGame(String gameName)
+    public void startSession(Game game)
     {
-                  
          
     }
-    public void startSession()
-    {
-        
-    }
+    
 }

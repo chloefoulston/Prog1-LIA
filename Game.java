@@ -30,7 +30,7 @@ public class Game
     // overides toString()  
     public String toString()
     {
-        return getGameName() + ":"  + getGenre();
+        return getGameName();
     }
     // prints all game info
     public void getGameInfo()

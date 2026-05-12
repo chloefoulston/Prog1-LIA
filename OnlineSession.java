@@ -20,7 +20,7 @@ public class OnlineSession extends GameSession
             validSession = false;
         }
     }
-    public void startSession()
+    public void startSession(Game game)
     {
         
     }

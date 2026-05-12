@@ -1,29 +1,32 @@
 
+
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class GameLibraryTest.
+ * The test class GameMenuTest.
  *
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class GameLibraryTest
+public class GameMenuTest
 {
     private GameLibrary lib;
     private Game g1;
     private Game g2;
     private Game g3;
     private Game g4;
+    private Responder responde1;
+    private GameMenu gameMenu1;
+    private InputReader input;
 
     /**
-     * Default constructor for test class GameLibraryTest
+     * Default constructor for test class GameMenuTest
      */
-    public GameLibraryTest()
+    public GameMenuTest()
     {
-
     }
 
     /**
@@ -60,9 +63,12 @@ public class GameLibraryTest
         g4.addRating(5);
         g4.addRating(5);
         g4.addRating(5);
-        
 
         System.out.println("TEST STARTED");
+        input = new InputReader();
+        responde1 = new Responder(input, lib);
+        gameMenu1 = new GameMenu(responde1);
+        
     }
 
     /**
@@ -73,39 +79,17 @@ public class GameLibraryTest
     @AfterEach
     public void tearDown()
     {
-        System.out.println("All Done!");
     }
 
+
     @Test
-    public void testingENUMFilterbyGenre()
+    public void testing()
     {
-        System.out.println("TEST STARTED");
-
-        System.out.println("Filtered by Genre. List BELOW");
-        lib.listByGenre("simulation");
     }
 
-
-    @Test
-    public void testSearchGame()
-    {
-        System.out.println("----valid value");
-        lib.searchForGame("Minecraft");
-        System.out.println("----invalid value");
-        lib.searchForGame("Once Human");
-    }
-
-    @Test
-    public void getGameObj()
-    {
-        lib.listAllGames();
-        Game game1 = lib.getGameObj("Minecraft");
-        assertEquals(g1, game1);
-    }
-
-    @Test
-    public void testToString() {
-        System.out.println(lib);
-    }
+   
 }
+
+
+
 
