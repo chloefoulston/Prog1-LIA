@@ -7,17 +7,31 @@
  */
 public class GameMenu
 {
-    private GameLibrary library;
-    private InputReader inputReader;
     
+    private InputReader input;
     private Responder responder;
+    private boolean finished;
     
-    public void start()
+    public GameMenu(GameLibrary lib)
     {
-    
+        input = new InputReader();
+        responder = new Responder(input,lib);
+        finished = false;        
         
     }
-    
+    public void start() {
+        while (!finished) {
+            printMainMenu();
+            String choice = input.getChoice();
+
+            if (choice.equals("quit")) {
+                finished = true;
+                System.out.println("Goodbye.");
+            } else {
+                responder.responses(choice);
+            }
+        }
+    }
     public void printMainMenu()
     {
         System.out.println("Game Menu:");
@@ -31,14 +45,5 @@ public class GameMenu
         System.out.println("8: Print game session log");
         System.out.println("9: Add your own game");
         System.out.println("0: EXIT");
-    }
-    
-    public void filterMenu()
-    {
-        
-    }
-    
-    
-    
-
+    }      
 }

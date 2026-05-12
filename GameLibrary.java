@@ -24,6 +24,10 @@ public class GameLibrary
     {
         System.out.println("Your Game Library has " + games.size() + " games");
     }
+    public void printGameDetails(String name)
+    {
+        searchForGame(name).getGameInfo();
+    }
     public Game searchForGame(String name)
     {
         boolean foundGame = false;
@@ -49,6 +53,10 @@ public class GameLibrary
             }
         }
         return null;
+    }
+    public void getGameDetails(String name)
+    {
+        getGameObj(name).getGameInfo();
     }
     public GameSession startSession(Game game)
     {

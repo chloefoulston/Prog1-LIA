@@ -9,10 +9,9 @@ public class Responder
 {
     
     private GameLibrary lib;
-    private GameMenu menu;
     private InputReader input;
     private GameSession session;
-    public Responder(GameLibrary lib,InputReader input) 
+    public Responder(InputReader input, GameLibrary lib ) 
     {
         this.lib=lib;
         this.input = input;
@@ -27,7 +26,7 @@ public class Responder
                 lib.listAllGames();
                 break;
             case "3":
-                menu.filterMenu();
+                filterMenu();
                 break;
             case "4":
                 lib.listTopRatings();
@@ -37,10 +36,7 @@ public class Responder
                 break;
                 
             case "6":
-                System.out.println("enter game name");
-                String gameNameRate = input.getString();
-                int gameRating = input.getInt();
-                lib.getGameObj(gameNameRate).addRating(gameRating);
+                rateGame();
                 break;
                 
             case "7":
@@ -48,9 +44,11 @@ public class Responder
                 break;
         
             case "8":
+                getGameLogInfo();
                 
                 break;
-            case "9":                
+            case "9": 
+                addGame();
                 
                 break;
             case "0":
@@ -73,28 +71,34 @@ public class Responder
     public void gameInfo()
     {
         System.out.println("enter game name");
-                String gameNameInfo = input.getString();
-                lib.getGameObj(gameNameInfo).getGameInfo();
+        String name = input.getString();
+        lib.getGameDetails(name);
             
     }
    
     public void rateGame()
     {
+        System.out.println("enter game name");
+                String name = input.getString();
+                int gameRating = input.getInt();
+                lib.getGameObj(name).addRating(gameRating);
         
     }
     
     public void startGame()
     {
         System.out.println("enter game name");
-                String gameNameStartGame = input.getString();
-                Game game = lib.getGameObj(gameNameStartGame);
-                GameSession session = lib.startSession(game);
-                session.startSession();
+            String gameNameStartGame = input.getString();
+            Game game = lib.getGameObj(gameNameStartGame);
+            GameSession session = lib.startSession(game);
+            session.startSession();
     }
     
     public void getGameLogInfo()
     {
         
     }
+    
+    
     
 }
