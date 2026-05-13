@@ -12,10 +12,10 @@ public class GameMenu
     private Responder responder;
     private boolean finished;
     
-    public GameMenu(Responder responder)
+    public GameMenu()
     {
         input = new InputReader();
-        this.responder = responder;
+        responder = new Responder();
         finished = false;        
         
     }

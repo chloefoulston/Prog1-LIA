@@ -66,8 +66,8 @@ public class ResponderTest
 
         System.out.println("TEST STARTED");
         input = new InputReader();
-        responde1 = new Responder(input, lib);
-        gameMenu1 = new GameMenu(responde1);
+        responde1 = new Responder();
+        gameMenu1 = new GameMenu();
     }
 
     /**
