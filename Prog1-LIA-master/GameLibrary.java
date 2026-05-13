@@ -1,0 +1,146 @@
+import java.util.ArrayList;
+/**
+ * Write a description of class GameLibrary here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class GameLibrary
+{
+    private ArrayList<Game>games;
+    
+    private ArrayList<GameSession>sessions;
+    private boolean foundGame;
+    public GameLibrary()
+    {
+        games = new ArrayList<>();
+        sessions = new ArrayList<>();
+    }
+    
+    public String toString(){
+        return "GameLibrary has " + games.size() + " games: " + games.toString();
+    }
+    public void printLibraryDetails()
+    {
+        System.out.println("Your Game Library has " + games.size() + " games");
+    }
+    public void printGameDetails(String name)
+    {
+        searchForGame(name).getGameInfo();
+    }
+    public Game searchForGame(String name)
+    {
+        boolean foundGame = false;
+        for (Game g : games){
+            if (g.getGameName().equals(name)){
+               foundGame= true;
+            }else{
+                foundGame=false;
+            }
+        }
+        return null;
+        
+    }
+    
+    // returns a game object by searching its name
+    public Game getGameObj(String name)
+    {
+        searchForGame(name);       
+        for (Game g : games){
+            if(foundGame = true){
+            searchForGame(name);
+            return g;
+            }
+        }
+        return null;
+    }
+    public void getGameDetails(String name)
+    {
+        getGameObj(name).getGameInfo();
+    }
+    public GameSession startSession(Game game)
+    {
+        switch(game.getGameType()) 
+        {
+            case "SINGLEPLAYER":
+            return new SingleplayerSession(game);
+            case "COOP":
+            return new COOPSession(game);
+            case "ONLINE":
+            return new OnlineSession(game);
+            default:
+                return null;
+        }
+    }
+        
+    
+    public void listTopRatings()
+    {
+        for (Game g:games){
+            if(g.getAverageRating() >=4){
+                System.out.println(g.getGameName()+" : " + g.getAverageRating() + " stars");
+            }
+        }
+    }
+    
+    // add game to collection
+    public void addGame(Game g)
+    {
+        games.add(g);
+    }
+    
+    public void listAllGames()
+    {
+        for (Game g: games){
+            System.out.println(g);
+        }
+        
+    }
+    
+    
+    public void listByGenre(String genre)
+    {
+        for (Game g: games){
+            if(g.getGenre().equals(genre.toUpperCase())){
+                System.out.println(g);
+                
+            }
+        }
+    }
+    public void listByGameType(String gameType)
+    {
+        for (Game g: games){
+            if(g.getGameType().equals(gameType.toUpperCase())){
+                System.out.println(g);
+                
+            }
+        }
+    }
+    public void listByAgeRating(String ageRating)
+    {
+        for (Game g: games){
+            if(g.getAgeRating().equals(ageRating.toUpperCase())){
+                System.out.println(g);
+                
+            }
+        }
+        
+    }
+    
+    public void listByPlatform(String platform)
+    {
+        for (Game g: games){
+            if(g.getPlatform().equals(platform.toUpperCase())){
+                System.out.println(g);
+                
+            }
+        }
+    }
+    
+    public void addSession(GameSession session)
+    {
+        sessions.add(session);
+    }
+    
+    
+}
