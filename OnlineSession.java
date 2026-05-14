@@ -7,11 +7,14 @@
  */
 public class OnlineSession extends GameSession
 {
+    private boolean validSession;
     public OnlineSession(Game game)
     {
+        System.out.println(game.getGameName() + " has started, select server");
+        boolean running = true;
          
     }
-    private boolean validSession;
+    
     public void validSession(String name)
     {
         if (lib.getGameObj(name).getGameType().equals("ONLINEMULTIPLAYER")){
