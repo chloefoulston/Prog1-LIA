@@ -7,18 +7,19 @@
  */
 public class GameMenu
 {
-    
+
     private InputReader input;
     private Responder responder;
     private boolean finished;
-    
+
     public GameMenu()
     {
         input = new InputReader();
         responder = new Responder();
         finished = false;        
-        
+
     }
+
     public void start() {
         responder.printMainMenu();
         while (!finished) {
@@ -32,6 +33,7 @@ public class GameMenu
             }
         }
     }
+
     public void printMainMenu()
     {
         System.out.println("Game Menu:");
@@ -46,4 +48,13 @@ public class GameMenu
         System.out.println("9: Add your own game");
         System.out.println("0: EXIT");
     }      
+
+    public void quit() {
+        finished = true;
+        System.out.println("Quitting Menu...");
+    }
+
+    public boolean isFinished() {
+        return finished;
+    }
 }

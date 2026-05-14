@@ -1,5 +1,4 @@
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,19 +46,19 @@ public class GameMenuTest
         lib.addGame(g2);
         lib.addGame(g3);
         lib.addGame(g4);
-        
+
         g1.addRating(5);
         g1.addRating(4);
         g1.addRating(5);
-        
+
         g2.addRating(1);
         g2.addRating(2);
         g2.addRating(1);
-        
+
         g3.addRating(3);
         g3.addRating(2);
         g3.addRating(5);
-        
+
         g4.addRating(5);
         g4.addRating(5);
         g4.addRating(5);
@@ -68,7 +67,7 @@ public class GameMenuTest
         input = new InputReader();
         responde1 = new Responder();
         gameMenu1 = new GameMenu();
-        
+
     }
 
     /**
@@ -81,15 +80,17 @@ public class GameMenuTest
     {
     }
 
-
     @Test
     public void testing()
     {
     }
 
-   
+    @Test
+    public void testQuit() {
+        gameMenu1.quit();
+        System.out.println("Quit: " + gameMenu1.isFinished());
+    }
+
 }
-
-
 
 

@@ -13,7 +13,8 @@ public class Responder
     private GameSession session;
     public Responder() 
     {
-        
+        lib = new GameLibrary();
+        input = new InputReader();
     }
     public void responses(String choice)
     {
@@ -136,6 +137,7 @@ public class Responder
             System.out.println("Action, Adventure, Horror, Racing, RPG, Simulation, Strategy, Survival");
 
             String choice = input.getString().trim().toUpperCase();
+            return Genre.valueOf(choice);
         }
     }
     private Platform choosePlatform() {
@@ -144,6 +146,7 @@ public class Responder
             System.out.println("PC, CONSOLE, MOBILE, SWITCH");
 
             String choice = input.getString().trim().toUpperCase();
+            return Platform.valueOf(choice);
         }
     }
     private AgeRating chooseAgeRating() {
@@ -152,6 +155,7 @@ public class Responder
             System.out.println("E, E10, T, M, AO");
 
             String choice = input.getString().trim().toUpperCase();
+            return AgeRating.valueOf(choice);
         }
     }
     private GameType chooseGameType() {
@@ -160,6 +164,7 @@ public class Responder
             System.out.println("Singleplayer, COOP, OnlineMultiplayer");
 
             String choice = input.getString().trim().toUpperCase();
+            return GameType.valueOf(choice);
         }
     }
     public void gameInfo()
@@ -197,7 +202,7 @@ public class Responder
     
     public void getGameLogInfo()
     {
-        
+        System.out.println("Active session: " + session);
     }
     
     
