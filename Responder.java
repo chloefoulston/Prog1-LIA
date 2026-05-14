@@ -11,6 +11,11 @@ public class Responder
     private GameLibrary lib;
     private InputReader input;
     private GameSession session;
+    public Responder()
+    {
+        lib = new GameLibrary();
+        input = new InputReader();
+    }
     public Responder(GameLibrary lib) 
     {
         this.lib = lib;
