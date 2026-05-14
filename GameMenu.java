@@ -12,6 +12,13 @@ public class GameMenu
     private Responder responder;
     private boolean finished;
 
+    public GameMenu()
+    {
+        input = new InputReader();
+        responder = new Responder();
+        finished = false;        
+
+    }
     public GameMenu(GameLibrary lib)
     {
         input = new InputReader();
