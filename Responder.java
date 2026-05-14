@@ -97,7 +97,20 @@ public class Responder
         Game game = new Game(name, developer, genre, ageRating,platform , gameType);
         lib.addGame(game);
 
-        System.out.println("Game added.");
+        System.out.println("Game added. would you like to add another? yes or no?");
+         String choice = input.getString();
+         switch(choice){
+            case "yes":
+               addGame();
+                break;
+            case "no":
+                System.out.println("going back to main menu");
+                printMainMenu();
+                break;
+            default:
+                System.out.println("sorry that didnt seem like a yes or no, here is the main menu");
+                printMainMenu();
+        }
     }
     private void filterMenu() {
         System.out.println("\nFilter by:");
