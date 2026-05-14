@@ -103,7 +103,7 @@ public class Responder
         lib.addGame(game);
 
         System.out.println("Game added.");
-        System.out.println("Game added. would you like to add another? yes or no?");
+        System.out.println("would you like to add another? yes or no?");
          String choice = input.getString();
          switch(choice){
             case "yes":
@@ -163,7 +163,13 @@ public class Responder
             System.out.println("Action, Adventure, Horror, Racing, RPG, Simulation, Strategy, Survival");
 
             String choice = input.getString().trim().toUpperCase();
-            return Genre.valueOf(choice);
+            
+            try{
+                return Genre.valueOf(choice);
+            }
+            catch(IllegalArgumentException e){
+                System.out.println("invalid genre");
+            }
         }
     }
 
@@ -173,7 +179,12 @@ public class Responder
             System.out.println("PC, CONSOLE, MOBILE, SWITCH");
 
             String choice = input.getString().trim().toUpperCase();
-            return Platform.valueOf(choice);
+            try{
+                return Platform.valueOf(choice);
+            }
+            catch(IllegalArgumentException e){
+                System.out.println("invalid platform");
+            }
         }
     }
 
@@ -183,7 +194,13 @@ public class Responder
             System.out.println("E, E10, T, M, AO");
 
             String choice = input.getString().trim().toUpperCase();
-            return AgeRating.valueOf(choice);
+            try{
+                return AgeRating.valueOf(choice);
+            }
+            catch(IllegalArgumentException e){
+                System.out.println("invalid age rating");
+            }
+            
         }
     }
 
@@ -193,7 +210,13 @@ public class Responder
             System.out.println("Singleplayer, COOP, OnlineMultiplayer");
 
             String choice = input.getString().trim().toUpperCase();
-            return GameType.valueOf(choice);
+            try{
+                return GameType.valueOf(choice);
+            }
+            catch(IllegalArgumentException e){
+                System.out.println("invalid game type rating");
+            }
+        
         }
     }
 
