@@ -11,9 +11,9 @@ public class Responder
     private GameLibrary lib;
     private InputReader input;
     private GameSession session;
-    public Responder() 
+    public Responder(GameLibrary lib) 
     {
-        lib = new GameLibrary();
+        this.lib = lib;
         input = new InputReader();
     }
     public void responses(String choice)

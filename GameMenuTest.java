@@ -64,9 +64,9 @@ public class GameMenuTest
         g4.addRating(5);
 
         System.out.println("TEST STARTED");
-        input = new InputReader();
-        responde1 = new Responder();
-        gameMenu1 = new GameMenu();
+        
+        
+        gameMenu1 = new GameMenu(lib);
 
     }
 

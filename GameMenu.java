@@ -7,15 +7,15 @@
  */
 public class GameMenu
 {
-
+    private GameLibrary lib;
     private InputReader input;
     private Responder responder;
     private boolean finished;
 
-    public GameMenu()
+    public GameMenu(GameLibrary lib)
     {
         input = new InputReader();
-        responder = new Responder();
+        responder = new Responder(lib);
         finished = false;        
 
     }
