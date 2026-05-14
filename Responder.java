@@ -16,11 +16,13 @@ public class Responder
         lib = new GameLibrary();
         input = new InputReader();
     }
+
     public Responder(GameLibrary lib) 
     {
         this.lib = lib;
         input = new InputReader();
     }
+
     public void responses(String choice)
     {
         switch (choice){
@@ -39,18 +41,18 @@ public class Responder
             case "5":
                 gameInfo();
                 break;
-                
+
             case "6":
                 rateGame();
                 break;
-                
+
             case "7":
                 startGame();
                 break;
-        
+
             case "8":
-                getGameLogInfo();
-                
+                endGame();
+
                 break;
             case "9": 
                 addGame();
@@ -58,30 +60,33 @@ public class Responder
             default:
                 invalidInput();
                 break;
-            
+
         }
     }
+
     public void printMainMenu()
     {
         System.out.println("Game Menu:");
+        System.out.println("To select an option, enter one of the");
+        System.out.println("following numbers 0 - 10");
         System.out.println("1: Print library details");
         System.out.println("2: List all games");
         System.out.println("3: Filter Games");
-        System.out.println("4:List top-rated games");
+        System.out.println("4: List top-rated games");
         System.out.println("5: Print game details");
         System.out.println("6: Rate a game");
         System.out.println("7: Start a game session");
-        System.out.println("8: Print game session log");
+        System.out.println("8: end game session");
         System.out.println("9: Add your own game");
         System.out.println("0: EXIT");
     }    
+
     public void invalidInput()
     {
         System.out.println("Input is not recognized here are the valid options");
         printMainMenu();
     }
 
-    
     private void addGame() {
         System.out.println("Game name:");
         String name = input.getString();
@@ -97,6 +102,7 @@ public class Responder
         Game game = new Game(name, developer, genre, ageRating,platform , gameType);
         lib.addGame(game);
 
+        System.out.println("Game added.");
         System.out.println("Game added. would you like to add another? yes or no?");
          String choice = input.getString();
          switch(choice){
@@ -112,6 +118,7 @@ public class Responder
                 printMainMenu();
         }
     }
+
     private void filterMenu() {
         System.out.println("\nFilter by:");
         System.out.println("1. Genre");
@@ -126,7 +133,7 @@ public class Responder
                 System.out.println("Action, Adventure, Horror, Racing, RPG, Simulation, Strategy, Survival");
                 String genre = input.getString().trim().toUpperCase();
                 lib.listByGenre(genre);
-            break;
+                break;
             case "2":
                 System.out.println("Choose platform:");
                 System.out.println("PC, CONSOLE, MOBILE, SWITCH");
@@ -146,8 +153,9 @@ public class Responder
                 lib.listByGameType(gameType);
                 break;
         }
-        
+
     }
+
     private Genre chooseGenre() 
     {
         while (true) {
@@ -158,6 +166,7 @@ public class Responder
             return Genre.valueOf(choice);
         }
     }
+
     private Platform choosePlatform() {
         while (true) {
             System.out.println("Choose platform:");
@@ -167,6 +176,7 @@ public class Responder
             return Platform.valueOf(choice);
         }
     }
+
     private AgeRating chooseAgeRating() {
         while (true) {
             System.out.println("Choose Age Rating:");
@@ -176,6 +186,7 @@ public class Responder
             return AgeRating.valueOf(choice);
         }
     }
+
     private GameType chooseGameType() {
         while (true) {
             System.out.println("Choose Game Type:");
@@ -185,44 +196,52 @@ public class Responder
             return GameType.valueOf(choice);
         }
     }
+
     public void gameInfo()
     {
         System.out.println("enter game name");
         String name = input.getString();
         lib.getGameDetails(name);
-            
+        getGameLogInfo();
+
     }
-   
+
     public void rateGame()
     {
-        System.out.println("enter game name");
-                String name = input.getString();
-                int gameRating = input.getInt();
-                lib.getGameObj(name).addRating(gameRating);
-        
+        System.out.println("enter game name:");
+        String name = input.getString();
+        System.out.println("enter game rating:");
+        int gameRating = input.getInt();
+        lib.getGameObj(name).addRating(gameRating);
+
     }
-    
+
     public void startGame()
     {
         System.out.println("enter game name");
-            String gameNameStartGame = input.getString();
-            Game game = lib.getGameObj(gameNameStartGame);
-            GameSession session = lib.startSession(game);
-            System.out.println("please press enter to end game session");
-            input.getString();
-            
-            session.endGame(game);
-            lib.addSession(session);
-            System.out.println("going back to main menu");
-                       
+        String gameNameStartGame = input.getString();
+        Game game = lib.getGameObj(gameNameStartGame);
+        session = lib.startSession(game);
 
     }
-    
+    public void endGame(){
+        System.out.println("enter game name");
+        String gameNameStartGame = input.getString();
+        Game game = lib.getGameObj(gameNameStartGame);
+        if (session != null){
+            session.endGame(game);
+            lib.addSession(session);
+            System.out.println("game session ended.");
+        }else{
+            System.out.println("no active session.");
+        }
+        System.out.println("going back to main menu...");
+    }
+
     public void getGameLogInfo()
     {
         System.out.println("Active session: " + session);
     }
-    
-    
+
     
 }

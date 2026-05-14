@@ -92,7 +92,7 @@ public class GameLibrary
     public void listAllGames()
     {
         for (Game g: games){
-            System.out.println(g.getGameName() + " : " + g.getGenre());
+            System.out.println(g);
         }
         
     }

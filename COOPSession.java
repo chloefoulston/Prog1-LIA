@@ -11,9 +11,8 @@ public class COOPSession extends GameSession
     private boolean validSession;
     public COOPSession(Game game)
     {
-        System.out.println(game.getGameName() + " has started, max players 4");
+         System.out.println(game.getGameName() + " has started, max players 4");
         boolean running = true;
-         
     }
     public void validSession(String name)
     {
