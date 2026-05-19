@@ -225,7 +225,6 @@ public class Responder
         System.out.println("enter game name");
         String name = input.getString();
         lib.getGameDetails(name);
-        getGameLogInfo();
 
     }
 

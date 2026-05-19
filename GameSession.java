@@ -13,13 +13,13 @@ public abstract class GameSession
     protected long duration;
     protected boolean running = false;
     
+    public GameSession(){
+        lib = new GameLibrary();
+    }
+    
 
     public String toString() {
         return "GameSession: running = " + running + ", duration = " + duration + "s";
-    }
-    //takes game object and starts game session
-    public void CreateSession(){
-        
     }
     // takes game object and ends session
     public void endGame(Game game){
@@ -31,7 +31,11 @@ public abstract class GameSession
     public boolean isRunning(){
         return running;
     }
-
+    
+    // found a way to make milliseconds into seconds minutes and hours
+    // by searching it up, should be fine now. I forgot about the fact I
+    // can just divide the seconds by how many there are in minutes and hours
+    // NOT USED IN RESPONDER BTW!
     public long getGameDuration(){
         duration = (System.currentTimeMillis() - startTime) / 1000;
         if (running){
@@ -47,7 +51,7 @@ public abstract class GameSession
             }
             return duration;
         }else{
-            System.out.println("Game currently not running.");
+            System.out.println("Game not running.");
             return 0;
         }
     }

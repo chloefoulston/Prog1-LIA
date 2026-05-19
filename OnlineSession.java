@@ -10,7 +10,8 @@ public class OnlineSession extends GameSession
     public OnlineSession(Game game)
     {
         System.out.println(game.getGameName() + " has started, select server");
-        boolean running = true;
+        running = true;
+        startTime = System.currentTimeMillis();
     }
     private boolean validSession;
     public void validSession(String name)
@@ -23,7 +24,7 @@ public class OnlineSession extends GameSession
     }
     public void startSession(Game game)
     {
-        
+       
     }
 }
 

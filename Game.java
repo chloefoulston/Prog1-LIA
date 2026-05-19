@@ -35,7 +35,7 @@ public class Game
     // prints all game info
     public void getGameInfo()
     {
-        System.out.println("Game Tittle : " + getGameName());
+        System.out.println("Game Title : " + getGameName());
         System.out.println("Game Developer : " + getGameDeveloper());
         System.out.println("Genre : " + getGenre());
         System.out.println("Platform : " + getPlatform());

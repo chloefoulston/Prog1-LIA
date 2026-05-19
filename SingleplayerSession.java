@@ -13,8 +13,8 @@ public class SingleplayerSession extends GameSession
     public SingleplayerSession(Game game)
     {
         System.out.println(game.getGameName() + " has started");
-        boolean running = true;
-        
+        running = true;
+        startTime = System.currentTimeMillis();
     }
     public void validSession(String name)
     {
